@@ -1,5 +1,5 @@
 resource "google_storage_bucket" "static" {
- name          = "terraformgcp"
+ name          = "terraformgcpow23"
  location      = "US"
  storage_class = "STANDARD"
 
