@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  credentials = file(env.GCP_CRED_ID)  # Use the environment variable injected by Jenkins
+  credentials = file(var.GOOGLE_APPLICATION_CREDENTIALS)  # Correct reference to environment variable
   project     = "pelagic-tracker-250700"  # Your GCP project ID
   region      = "asia-south1-c"           # Your desired region
 }
