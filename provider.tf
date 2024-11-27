@@ -6,9 +6,14 @@ terraform {
     }
   }
 }
+
 provider "google" {
-  credentials = file("/home/amit/credentials.json")  # Path to your GCP credentials file
-  project     = "pelagic-tracker-250700"                 # Your GCP project ID
-  region      = "asia-south1-c"                        # Your desired region
+  credentials = file(var.GCP_CRED_FILE)  # Use the path defined in the environment or variable
+  project     = "pelagic-tracker-250700"  # Your GCP project ID
+  region      = "asia-south1-c"           # Your desired region
 }
 
+variable "GCP_CRED_FILE" {
+  description = "Path to the GCP credentials JSON file"
+  type        = string
+}
