@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  credentials = file(var.GOOGLE_APPLICATION_CREDENTIALS)  # Correct reference to environment variable
+  credentials = file("${env.GOOGLE_APPLICATION_CREDENTIALS}")  # Directly reference the environment variable
   project     = "pelagic-tracker-250700"  # Your GCP project ID
   region      = "asia-south1-c"           # Your desired region
 }
